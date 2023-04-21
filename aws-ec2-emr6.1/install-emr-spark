@@ -1,0 +1,6 @@
+#!/bin/bash
+sudo mkdir -p /var/aws/emr
+sudo cp repoPublicKey.txt /var/aws/emr/
+sudo cp emr-apps.repo /etc/yum.repos.d/
+sudo yum makecache
+sudo yum -y install spark-python java-11-amazon-corretto
