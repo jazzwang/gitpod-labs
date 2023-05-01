@@ -1,4 +1,4 @@
-val toc = spark.read.json("2023-03-27_humana_toc.json.gz")
+val toc = spark.read.json("data/2023-03-27_humana_toc.json.gz")
 toc.printSchema
 val toc_sorted = toc.select(explode($"aaData").as("toc")).select($"toc.size",$"toc.name").orderBy($"size".desc)
 println(s"Total count = " + toc_sorted.count)
