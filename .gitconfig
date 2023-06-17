@@ -1,0 +1,47 @@
+[alias]
+
+  st = status --ignored
+  ci = commit -a
+  br = branch -avv
+  co = checkout
+  df = diff
+  # http://stackoverflow.com/questions/2851918/how-to-get-change-history-for-a-specific-file-in-git-repository
+  lg = log -p -U0 --pretty=format:%ai
+  in = !git pull -v && git svn fetch
+  out = !git svn dcommit && git push
+  rb = rebase
+  unstage = reset --
+  uncommit = reset --soft HEAD^
+  gi = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"
+
+[push]
+
+  default = matching
+
+[color]
+
+  ui = true
+  diff = auto
+
+[branch]  
+  # http://ihower.tw/blog/archives/3843
+  autosetuprebase = always
+[pull]
+	rebase = true
+[color "diff"]
+	whitespace = red reverse
+	meta = 11
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+[diff]
+	wsErrorHighlight = all
+[interactive]
+	diffFilter = diff-highlight
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
