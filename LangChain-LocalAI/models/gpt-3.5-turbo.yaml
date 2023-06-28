@@ -1,0 +1,11 @@
+backend: gpt4all-j
+context_size: 1024
+name: gpt-3.5-turbo
+parameters:
+  model: ggml-gpt4all-j
+  temperature: 0.2
+  top_k: 80
+  top_p: 0.7
+template:
+  chat: gpt4all-chat
+  completion: gpt4all-completion
